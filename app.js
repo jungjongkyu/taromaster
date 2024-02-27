@@ -1,4 +1,22 @@
-document.getElementById('drawCardBtn').addEventListener('click', drawCard);
+document.getElementById('drawCardBtn').addEventListener('click', function() {
+    drawCards(1); // 한 장 뽑기
+});
+
+document.getElementById('drawTwoCardsBtn').addEventListener('click', function() {
+    drawCards(2); // 두 장 뽑기
+});
+
+function drawCards(numberOfCards) {
+    clearCards(); // 카드 결과 영역을 비웁니다.
+    for (let i = 0; i < numberOfCards; i++) {
+        const cardName = drawCard();
+        displayCard(cardName);
+    }
+}
+
+function clearCards() {
+    document.getElementById('cardResult').innerHTML = ''; // 카드 결과 영역을 비웁니다.
+}
 
 function drawCard() {
     const cardNames = [
@@ -25,18 +43,17 @@ function drawCard() {
         "20번 심판",
         "21번 월드",
     ];
-
     const selectedCardIndex = Math.floor(Math.random() * cardNames.length);
     const selectedCardName = cardNames[selectedCardIndex];
-    const encodedCardName = encodeURI(selectedCardName);
-    const imageUrl = `https://jungjongkyu.github.io/taromaster/${encodedCardName}.jpg`;
-    displayCard(imageUrl, selectedCardName);
+    return selectedCardName; // 뽑힌 카드 이름을 반환합니다.
 }
 
-function displayCard(imageUrl, cardName) {
+function displayCard(cardName) {
+    const encodedCardName = encodeURI(cardName);
+    const imageUrl = `https://jungjongkyu.github.io/taromaster/${encodedCardName}.jpg`;
     const resultDiv = document.getElementById('cardResult');
-    resultDiv.innerHTML = `
-        <img src="${imageUrl}" alt="타로 카드 이미지" class="tarot-card-image">
+    resultDiv.innerHTML += `
+        <img src="${imageUrl}" alt="${cardName}" class="tarot-card-image">
         <div class="card-name">${cardName}</div>
-    `;
+    `; // 새 카드를 기존 결과에 추가합니다.
 }
