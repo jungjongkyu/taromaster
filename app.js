@@ -36,9 +36,7 @@ function drawCard() {
 function displayCard(imageUrl, cardName) {
     const resultDiv = document.getElementById('cardResult');
     resultDiv.innerHTML = `
-        <div class="card-container">
-            <img src="${imageUrl}" alt="${cardName}" class="tarot-card-image">
-            <div class="card-name">${cardName}</div>
-        </div>
+        <img src="${imageUrl}" alt="타로 카드 이미지" class="tarot-card-image">
+        <div class="card-name">${cardName}</div>
     `;
 }
