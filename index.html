@@ -7,14 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
     .tarot-card-image {
-        width: 100px; /* 이미지 너비를 500px로 설정 */
-        height: 100px; /* 이미지 높이를 400px로 설정 */
-        margin: 20px auto; /* 상단과 하단 여백을 주고 좌우는 자동으로 설정 */
-        display: block; /* 이미지를 블록 요소로 설정 */
+        max-width: 500px; /* PC에서의 이미지 최대 너비 */
+        max-height: 400px; /* PC에서의 이미지 최대 높이 */
+        width: 50vw; /* 화면 너비의 50% */
+        height: auto; /* 높이는 자동으로 조정 */
+        margin: 20px auto; /* 상단과 하단 여백 설정 */
     }
 
     .card-name {
-        font-size: 16px; /* 카드 이름의 글자 크기 */
+        font-size: 1.5vw; /* 화면 너비에 따라 글자 크기 조정 */
         color: #333; /* 카드 이름의 글자 색상 */
         text-align: center; /* 중앙 정렬 */
         margin-top: 10px; /* 카드 이름과 이미지 사이의 여백 */
@@ -22,15 +23,18 @@
 
     @media (max-width: 600px) {
         .tarot-card-image {
-            width: 180px; /* 모바일 화면에서 이미지 너비를 줄임 */
-            height: 230px; /* 모바일 화면에서 이미지 높이를 줄임 */
+            max-width: 300px; /* 모바일에서의 이미지 최대 너비 */
+            max-height: 240px; /* 모바일에서의 이미지 최대 높이 */
+            width: 60vw; /* 화면 너비의 60% */
+            height: auto; /* 높이는 자동으로 조정 */
         }
 
         .card-name {
-            font-size: 25px; /* 모바일 화면에서 카드 이름의 글자 크기를 조금 줄임 */
+            font-size: 3vw; /* 모바일에서의 글자 크기 조정 */
         }
     }
     </style>
+
 
 
 </head>
