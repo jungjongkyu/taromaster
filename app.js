@@ -29,7 +29,7 @@ function drawCard() {
     const selectedCardIndex = Math.floor(Math.random() * cardNames.length);
     const selectedCardName = cardNames[selectedCardIndex];
     const encodedCardName = encodeURI(selectedCardName);
-    const imageUrl = `https://jungjongkyu.github.io/taromaster.github.io/${encodedCardName}.jpg`;
+    const imageUrl = `https://jungjongkyu.github.io/taromaster/${encodedCardName}.jpg`;
     displayCard(imageUrl, selectedCardName);
 }
 
