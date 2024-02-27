@@ -28,7 +28,7 @@ function drawCard() {
 
     const selectedCardName = cardNames[Math.floor(Math.random() * cardNames.length)];
     const encodedCardName = encodeURI(selectedCardName); // 인코딩하여 URL에 포함될 수 있도록 처리
-    const imageUrl = `https://jungjongkuy.github.io/repository/${taromaster}.jpg`; // 귀하의 GitHub 사용자 이름과 저장소 이름으로 바꾸세요
+    const imageUrl = `https://jungjongkuy.github.io/repository/${taromaster.github.io}.jpg`; // 귀하의 GitHub 사용자 이름과 저장소 이름으로 바꾸세요
     displayCard(imageUrl);
 }
 
